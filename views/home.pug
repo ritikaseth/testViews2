@@ -1,0 +1,29 @@
+doctype html
+
+html
+    head
+        title My page
+
+    header
+        include ./layouts/header
+
+    main
+        ul
+            li
+                a(href="/home?page=home") home
+            li
+                a(href="/home?page=contact") contact
+            li
+                a(href="/home?page=profile") profile
+            li
+                a(href="/home?page=admin") admin
+
+
+        div
+            if(requestedPage == 'home')
+                include ./layouts/home
+            else if(requestedPage == 'contact')
+                include ./layouts/contacts
+
+    footer
+        include  ./layouts/footer
